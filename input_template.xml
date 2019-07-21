@@ -1,0 +1,41 @@
+<simulation verbosity='high'>
+  
+  <output prefix='IMI'>
+    <properties stride='4' filename='out'>
+      [step, time{picosecond}, conserved, temperature{kelvin}, potential]
+    </properties>
+    <!-- <checkpoint overwrite='false' stride='1000' filename='checkpoint'/> -->
+    <trajectory stride='4' cell_units='angstrom' filename='positions'> positions{angstrom} </trajectory>
+    <trajectory stride='4' cell_units='angstrom' filename='velocities'> velocities </trajectory>
+    <trajectory stride='4' cell_units='angstrom' filename='forces'> forces </trajectory>
+  </output>
+
+  <total_steps>100000</total_steps>
+
+  <ffsocket mode='unix' name='DFTB'>
+    <address>DFTB</address>
+    <latency>1e-3</latency>
+  </ffsocket>
+
+  <system>
+    <initialize nbeads='1'>
+      <file mode='pdb'>imidazole.pdb</file>
+      <velocities mode='thermal' units='kelvin'>384</velocities>
+    </initialize>
+    <forces>
+      <force forcefield='DFTB'> </force>
+    </forces>
+    <motion mode='dynamics'>
+      <dynamics mode='nvt'>
+        <thermostat mode='svr'>
+          <tau units="picosecond">1.0</tau>
+        </thermostat>
+        <timestep units="femtosecond">0.5</timestep>
+      </dynamics>
+    </motion>
+    <ensemble>
+      <temperature units='Kelvin'>384</temperature>  
+    </ensemble>
+  </system>
+
+</simulation>

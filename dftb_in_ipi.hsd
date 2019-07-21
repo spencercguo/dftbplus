@@ -1,0 +1,59 @@
+Driver = Socket {
+  File = "DFTB"
+  Protocol = i-PI {}
+  MaxSteps = -1
+}
+
+
+
+Hamiltonian = DFTB {
+  Charge = 1.0
+  SCC = Yes
+  SCCTolerance = 1e-5
+  Eigensolver = DivideAndConquer {}
+  MaxSCCIterations = 200
+  MaxAngularMomentum = {
+    H  = "s"
+    C  = "p"
+    N  = "p"
+  }
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = "SK/3ob-3-1/"
+    Separator = "-"
+    Suffix = ".skf"
+  }
+  KPointsAndWeights = {
+    0.0 0.0 0.0 1.0
+  }
+  Dispersion = LennardJones {
+    Parameters = UFFParameters {}
+  }
+  ThirdOrderFull = Yes
+  HubbardDerivs = {
+    H  = -0.1857 
+    C  = -0.1492
+    N  = -0.1535
+  }
+
+  HCorrection = Damping {
+    Exponent = 4.00
+  }
+
+}
+
+Geometry = GenFormat {
+  <<< "IMI-5-minimized.gen"
+}
+
+Options = {
+  WriteDetailedOut = Yes
+}
+
+Parallel = {
+  UseOmpThreads = Yes
+}
+
+Analysis = {
+  WriteBandOut = No
+  MullikenAnalysis = No
+}
