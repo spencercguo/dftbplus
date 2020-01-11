@@ -14,8 +14,6 @@ def main():
         for i in range(num_frames):
             frame = [next(f) for j in range(num_lines)]
             with open('input_files/{0}-{1}.xyz'.format(file_header, i), mode='w+') as new_f:
-                new_f.writelines(frame)
-
 
 if __name__ == "__main__":
     main()
