@@ -1,3 +1,4 @@
+import os
 import sys
 import numpy as np
 import mdtraj as md
@@ -25,9 +26,9 @@ def load_charges():
     for i in range(nframes):
         full_name = file_header + str(i) + file_name
         # check for file path
-        if not os.path.exists(input_path)
+        if not os.path.exists(input_path):
             print("%s doesn't exist!" %input_path)
-            sys.exit 1
+            sys.exit(1)
         if i % 1000 == 0:
             print('Loaded charges from frame {0}'.format(i))
 

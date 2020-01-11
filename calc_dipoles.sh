@@ -1,6 +1,6 @@
 #!/bin/bash
 #SBATCH --job-name=read-dipoles
-#SBATCH --output=read-dipoles.out
+#SBATCH --output=calc-dipoles.out
 #SBATCH --time=00:10:00
 #SBATCH --nodes=1
 #SBATCH --ntasks-per-node=1
@@ -17,7 +17,7 @@ echo '     started at:' `date`
 echo '       hostname:' `hostname`
 
 path=$SCRATCH/dftb-dft-dipoles
-srun python3 read_dipoles.py $path/dft_traj.xyz $path/input_topology.pdb $path/data/data- > read_dipoles.log
+srun python3 calc_dipoles.py $path/dft_traj.xyz $path/input_topology.pdb $path/data/data- > calc_dipoles.log
 
 # wait for everyone to finish and terminate
 wait
