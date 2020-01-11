@@ -1,13 +1,4 @@
-     started at: Sat Jan 11 01:34:02 PST 2020
+     started at: Sat Jan 11 01:43:36 PST 2020
        hostname: sh-101-21.int
-Traceback (most recent call last):
-  File "calc_dipoles.py", line 56, in <module>
-    main()
-  File "calc_dipoles.py", line 47, in main
-    charges = load_charges()
-  File "calc_dipoles.py", line 29, in load_charges
-    if not os.path.exists(input_path):
-NameError: name 'input_path' is not defined
-srun: error: sh-101-21: task 0: Exited with exit code 1
-srun: Terminating job step 58073357.0
-    finished at: Sat Jan 11 01:36:10 PST 2020
+slurmstepd: error: *** STEP 58073372.0 ON sh-101-21 CANCELLED AT 2020-01-11T01:53:23 DUE TO TIME LIMIT ***
+slurmstepd: error: *** JOB 58073372 ON sh-101-21 CANCELLED AT 2020-01-11T01:53:23 DUE TO TIME LIMIT ***
