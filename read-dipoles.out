@@ -1,0 +1,6 @@
+     started at: Fri Jan 10 20:53:01 PST 2020
+       hostname: sh-101-04.int
+/share/software/user/open/python/3.6.1/bin/python3: can't open file 'read_dipoles.py': [Errno 2] No such file or directory
+srun: error: sh-101-04: task 0: Exited with exit code 2
+srun: Terminating job step 58058917.0
+    finished at: Fri Jan 10 20:53:02 PST 2020
