@@ -1,4 +1,4 @@
-     started at: Sat Jan 11 01:43:36 PST 2020
-       hostname: sh-101-21.int
-slurmstepd: error: *** STEP 58073372.0 ON sh-101-21 CANCELLED AT 2020-01-11T01:53:23 DUE TO TIME LIMIT ***
-slurmstepd: error: *** JOB 58073372 ON sh-101-21 CANCELLED AT 2020-01-11T01:53:23 DUE TO TIME LIMIT ***
+     started at: Tue Jan 21 16:27:16 PST 2020
+       hostname: sh-101-51.int
+slurmstepd: error: *** JOB 59024661 ON sh-101-51 CANCELLED AT 2020-01-21T16:28:23 DUE TO TIME LIMIT ***
+slurmstepd: error: *** STEP 59024661.0 ON sh-101-51 CANCELLED AT 2020-01-21T16:28:23 DUE TO TIME LIMIT ***

@@ -1,0 +1,11 @@
+#!/bin/bash
+#SBATCH --job-name=10.job
+#SBATCH --output=/home/users/scguo/dipoles/job_split/10.out
+#SBATCH --time=00:01:00
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=1
+#SBATCH --mail-type=FAIL
+#SBATCH --mail-user=scguo@stanford.edu 
+
+srun python3 ~/dipoles/calc-dipoles.py /scratch/users/scguo/dftb-dft-dipoles/split/dft_traj-10.xyz /scratch/users/scguo/dftb-dft-dipoles/input_topology.pdb /scratch/users/scguo/dftb-dft-dipoles/data/data- 10000 /home/users/scguo/dipoles/split_dipoles
