@@ -9,18 +9,24 @@ def mkdir_p(dir):
 
 def main():
     file_header = "dft_traj"
-    # total number of files to produce
+    # number of frames per split to produce
     num_frames = int(sys.argv[1])
+    
+    # total number of frames
+    total_frames = int(sys.argv[2])
+
     # each frame has 384 atoms, plus 2 lines for identification
     num_lines = 386
     
     scratch = os.environ['SCRATCH']
-    data_dir = os.path.join(scratch, 'dftb-dft-dipoles/split')
+
+    split_dir = sys.argv[3]
+    data_dir = os.path.join(scratch, split_dir)
     mkdir_p(data_dir)
 
     input_file = os.path.join(scratch, 'dftb-dft-dipoles/dft_traj.xyz')
     with open(input_file, mode='r') as f:
-        for i in range(100000 // num_frames):
+        for i in range(total_frames // num_frames):
             frame = [next(f) for j in range(num_lines * num_frames)]
             with open('{0}/{1}-{2}.xyz'.format(data_dir, file_header, i), mode='w+') as new_f:
                 new_f.writelines(frame)

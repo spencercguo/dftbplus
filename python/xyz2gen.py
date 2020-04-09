@@ -1,14 +1,9 @@
-#!/usr/bin/env python
+#!/usr/local/bin/python
 ###############################################################################
 #
 # Convert XYZ to DFTB+ gen format
 #
 ###############################################################################
-# from os.path import dirname, abspath, join
-# import sys
-# 
-# # Find code directory relative to our directory
-# sys.path.append('/scratch/users/scguo/scripts/dftb/dptools/')
 import sys
 import optparse
 import numpy as np

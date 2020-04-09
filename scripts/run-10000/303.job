@@ -1,0 +1,43 @@
+#!/bin/bash
+#SBATCH --job-name=full-run-303
+#SBATCH --time=00:10:00
+#SBATCH --nodes=1
+#SBATCH --ntasks=4
+#SBATCH --mail-type=FAIL,END
+#SBATCH --mail-user=scguo@stanford.edu
+
+echo 'started at ' Sat Apr 11 08:33:58 PDT 2020
+
+header=/scratch/users/scguo/dftb-dft-dipoles/split-2/dft_traj-
+output=/scratch/users/scguo/dftb-dft-dipoles/data/data-
+
+module load imkl/2017.u2
+module load impi/2017.u2
+module load icc/2017.u2
+
+exe_dftb=dftb+
+np=4
+cd /scratch/users/scguo/dftb-dft-dipoles/data
+
+for ((j=0; j < 20; j++)) do
+    i2=303
+    index=$((i2 * 20 + j))
+    # folder for frame data
+    data_folder=data-$index
+    
+    # input template file
+    dftb_in=/home/users/scguo/dipoles/dftb_inputs/dftb_in.hsd
+    cp $dftb_in $data_folder
+
+    # DFTB must be run from the input file folder
+    cd $data_folder
+
+    # change dftb+ input file
+    sed -i s:example:/scratch/users/scguo/dftb-dft-dipoles/data/${data_folder}/${index}: dftb_in.hsd
+
+    log_file=${index}.log
+    touch $log_file
+
+    srun -n $np $exe_dftb > $log_file
+    cd ../
+    done
