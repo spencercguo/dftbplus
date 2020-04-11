@@ -18,6 +18,23 @@ def load_charges(data_dir, charge_filename):
             start_index = 14 + index * i
             charges[0, i] = float(
 
+def get_atom_coords(nframes):
+    """
+    Get atomic coordinates for atoms at a single frame
+    """
+    # num atoms x xyz x nframes
+    xyz = np.zeros((384, 3, nframes), dtype=np.float64)
+    for i in range(nframes):
+        o_index = 386 * i + 3 + index * 3
+        o_line = lines[o_index]
+        h1_line = lines[o_index + 1]
+        h2_line = lines[o_index + 2]
+
+        o_xyz = float(o_line.split()[1:])
+        h1_xyz = float(h1_line.split()[1:])
+        h2_xyz = float(h2_line.split()[1:])
+
+
 def calc_oh_vectors():
     # shape 2 x 3 x 100000
     # 2 vectors, each xyz, for each frame
@@ -45,6 +62,12 @@ def calc_dipoles():
     dipoles = np.zeros((3, nframes), dtype=np.float64)
     with open(traj_file, mode='r') as f:
         lines = f.readlines()
+
+    # num atoms x xyz x nframes
+    xyz = np.zeros((384, 3, nframes), dtype=np.float64)
+    for i in range(nframes):
+        xyz[:,:,i] = get
+     
 
         
 def main():

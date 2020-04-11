@@ -47,6 +47,8 @@ def main():
     print('Starting calculation....')
     xyz_file = sys.argv[1]
     pdb_file = sys.argv[2]
+    #SBATCH --mail-user=scguo@stanford.edu
+    #SBATCH --mail-user=scguo@stanford.edu
     print('XYZ file:' + xyz_file)
     print('PDB file:' + pdb_file)
     if not os.path.exists(xyz_file):
