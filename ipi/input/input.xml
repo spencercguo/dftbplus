@@ -1,6 +1,6 @@
 <simulation verbosity='high'>
   
-  <output prefix='IMI'>
+  <output prefix='../dftb-ipi/data'>
     <properties stride='4' filename='out'>
       [step, time{picosecond}, conserved, temperature{kelvin}, potential]
     </properties>
@@ -10,7 +10,7 @@
     <trajectory stride='4' cell_units='angstrom' filename='forces'> forces </trajectory>
   </output>
 
-  <total_steps>100000</total_steps>
+  <total_steps>10</total_steps>
 
   <ffsocket mode='unix' name='DFTB'>
     <address>DFTB</address>
@@ -19,8 +19,8 @@
 
   <system>
     <initialize nbeads='1'>
-      <file mode='pdb'>imidazole.pdb</file>
-      <velocities mode='thermal' units='kelvin'>384</velocities>
+      <file mode='pdb'>input.pdb</file>
+      <velocities mode='thermal' units='kelvin'>300</velocities>
     </initialize>
     <forces>
       <force forcefield='DFTB'> </force>
@@ -34,7 +34,7 @@
       </dynamics>
     </motion>
     <ensemble>
-      <temperature units='Kelvin'>384</temperature>  
+      <temperature units='Kelvin'>300</temperature>  
     </ensemble>
   </system>
 

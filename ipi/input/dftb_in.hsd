@@ -4,45 +4,51 @@ Driver = Socket {
   MaxSteps = -1
 }
 
-
-
 Hamiltonian = DFTB {
-  Charge = 1.0
+  Charge = 0.0
   SCC = Yes
   SCCTolerance = 1e-5
   Eigensolver = DivideAndConquer {}
-  MaxSCCIterations = 200
+  MaxSCCIterations = 100
   MaxAngularMomentum = {
     H  = "s"
-    C  = "p"
-    N  = "p"
+    O  = "p"
   }
+
   SlaterKosterFiles = Type2FileNames {
-    Prefix = "SK/3ob-3-1/"
+    Prefix = "3ob-3-1/"
     Separator = "-"
     Suffix = ".skf"
   }
   KPointsAndWeights = {
     0.0 0.0 0.0 1.0
   }
-  Dispersion = LennardJones {
-    Parameters = UFFParameters {}
-  }
+
+# Dispersion = DftD3 {
+#  Damping = BeckeJohnson {
+#    a1 = 0.746
+#    a2 = 
+#  }
+# }
+
   ThirdOrderFull = Yes
   HubbardDerivs = {
-    H  = -0.1857 
-    C  = -0.1492
-    N  = -0.1535
+    H  = -0.1857
+    O  = -0.1575
+    # C  = -0.1492
+    # N  = -0.1535
   }
 
   HCorrection = Damping {
     Exponent = 4.00
   }
-
+  Filling = Fermi {
+    Temperature [K] = 300
+  }
 }
 
 Geometry = GenFormat {
-  <<< "IMI-5-minimized.gen"
+  <<< "water128-geom.gen"
 }
 
 Options = {

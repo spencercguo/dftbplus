@@ -1,25 +1,25 @@
 <simulation verbosity='high'>
   
-  <output prefix='test'>
+  <output prefix='data/test'>
     <properties stride='4' filename='out'>
       [step, time{picosecond}, conserved, temperature{kelvin}, potential]
     </properties>
     <!-- <checkpoint overwrite='false' stride='1000' filename='checkpoint'/> -->
-    <trajectory stride='4' cell_units='angstrom' filename='positions'> positions{angstrom} </trajectory>
-    <trajectory stride='4' cell_units='angstrom' filename='velocities'> velocities </trajectory>
-    <trajectory stride='4' cell_units='angstrom' filename='forces'> forces </trajectory>
+    <trajectory stride='1' cell_units='angstrom' filename='positions'> positions{angstrom} </trajectory>
+    <trajectory stride='10' cell_units='angstrom' filename='velocities'> velocities </trajectory>
+    <trajectory stride='10' cell_units='angstrom' filename='forces'> forces </trajectory>
   </output>
 
-  <total_steps>10</total_steps>
+  <total_steps>100000</total_steps>
 
   <ffsocket mode='unix' name='DFTB'>
-    <address>dftb</address>
-    <latency>0.01</latency>
+    <address>DFTB</address>
+    <latency>1e-3</latency>
   </ffsocket>
 
   <system>
     <initialize nbeads='1'>
-      <file mode='pdb'>input_edit.pdb</file>
+      <file mode='pdb'>input/input.pdb</file>
       <velocities mode='thermal' units='kelvin'>300</velocities>
     </initialize>
     <forces>

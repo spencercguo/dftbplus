@@ -1,0 +1,43 @@
+
+ ____       ____       ____       ____
+/    \     /    \     /    \     /    \ 
+|  #################################  |
+\__#_/     \____/     \____/     \_#__/
+   #    _        _______  _____    #
+   #   (_)      |_   __ \|_   _|   #      -*-     v 2.0    -*-
+   #   __  ______ | |__) | | |     #
+   Y  [  ||______||  ___/  | |     #      A Universal Force Engine
+  0 0  | |       _| |_    _| |_    #      
+   #  [___]     |_____|  |_____|   #
+ __#_       ____       ____       _#__
+/  # \     /    \     /    \     / #  \ 
+|  #################################  |
+\____/     \____/     \____/     \____/
+
+    
+fetching ffsocket
+ # Initializing system object 
+ # Initializing simulation object 
+ # Initializer (stage 1) parsing positions object.
+Initializing from file input.pdb. Dimension: length, units: automatic, cell_units: automatic
+Interpreting input with dimension length, units angstrom and cell units angstrom
+ # Initializer (stage 1) parsing masses object.
+Initializing from file input.pdb. Dimension: length, units: automatic, cell_units: automatic
+Interpreting input with dimension length, units angstrom and cell units angstrom
+ # Initializer (stage 1) parsing labels object.
+Initializing from file input.pdb. Dimension: length, units: automatic, cell_units: automatic
+Interpreting input with dimension length, units angstrom and cell units angstrom
+ # Initializer (stage 1) parsing cell object.
+Initializing from file input.pdb. Dimension: length, units: automatic, cell_units: automatic
+Interpreting input with dimension length, units angstrom and cell units angstrom
+Initializing from file input.pdb. Dimension: length, units: automatic, cell_units: automatic
+Interpreting input with dimension length, units angstrom and cell units angstrom
+ # Initializer (stage 1) parsing velocities object.
+ # Resampling velocities at temperature 300.0 kelvin
+ # Initializer (stage 2) parsing positions object.
+ # Initializer (stage 2) parsing masses object.
+ # Initializer (stage 2) parsing labels object.
+ # Initializer (stage 2) parsing cell object.
+ # Initializer (stage 2) parsing velocities object.
+Created unix socket with address dftb
+ @ForceField: Starting the polling thread main loop.
