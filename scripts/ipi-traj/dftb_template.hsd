@@ -1,0 +1,58 @@
+Geometry = GenFormat {
+  <<< "XXXINPUT01.gen"
+}
+
+Driver = {
+}
+
+Hamiltonian = DFTB {
+  Charge = 0.0
+  SCC = Yes
+  SCCTolerance = 1e-5
+  Eigensolver = DivideAndConquer {}
+  MaxSCCIterations = 100
+  MaxAngularMomentum = {
+    H  = "s"
+    O  = "p"
+  }
+  SlaterKosterFiles = Type2FileNames {
+    Prefix = "/home/users/scguo/dipoles/3ob-3-1/"
+    Separator = "-"
+    Suffix = ".skf"
+  }
+  KPointsAndWeights = {
+    0.0 0.0 0.0 1.0
+  }
+  ThirdOrderFull = Yes
+  HubbardDerivs = {
+    H  = -0.1857
+    O  = -0.1575
+  }
+
+  HCorrection = Damping {
+    Exponent = 4.00
+  }
+  Filling = Fermi {
+    Temperature [K] = 300
+  }
+}
+
+Options = {
+  WriteDetailedOut = Yes
+  WriteDetailedXml = Yes
+}
+
+Parallel = {
+  UseOmpThreads = Yes
+}
+
+Analysis = {
+  WriteEigenvectors = Yes
+  WriteBandOut = No
+  MullikenAnalysis = No
+}
+
+ParserOptions = {
+  ParserVersion = 6
+}
+

@@ -1,0 +1,24 @@
+Options {
+  TotalChargeDensity = Yes           # Total density be plotted?
+  PlottedLevels = 1:-1               # All levels
+  PlottedSpins = 1 -1                
+  PlottedKPoints = 1
+  PlottedRegion = UnitCell {}
+  NrOfPoints = 125 125 125              # Number of grid points in each direction
+  NrOfCachedGrids = -1               # Nr of cached grids (speeds up things)
+
+  Verbose = Yes                      # Wanna see a lot of messages?
+}
+
+DetailedXml = "detailed.xml" 
+EigenvecBin = "eigenvec.bin"
+
+# Definition of the basis
+Basis {
+  Resolution = 0.01
+
+  # Including mio-1-1.hsd. (If you use a set, which depends on other sets,
+  # the wfc.*.hsd files for each required set must be included in a similar
+  # way.)
+  <<+ "/home/users/scguo/dipoles/3ob-3-1/wfc.3ob-3-1.hsd"
+}

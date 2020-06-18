@@ -8,23 +8,26 @@ def mkdir_p(dir):
         os.mkdir(dir)
 
 def main():
-    file_header = "dft_traj"
+    print(sys.argv)
+    input_file = sys.argv[1]
     # number of frames per split to produce
-    num_frames = int(sys.argv[1])
+    num_frames = int(sys.argv[2])
     
     # total number of frames
-    total_frames = int(sys.argv[2])
+    total_frames = int(sys.argv[3])
 
     # each frame has 384 atoms, plus 2 lines for identification
     num_lines = 386
     
     scratch = os.environ['SCRATCH']
 
-    split_dir = sys.argv[3]
+    split_dir = sys.argv[4]
     data_dir = os.path.join(scratch, split_dir)
     mkdir_p(data_dir)
 
-    input_file = os.path.join(scratch, 'dftb-dft-dipoles/dft_traj.xyz')
+    file_header = sys.argv[5]
+
+    # input_file = os.path.join(scratch, 'dftb-dft-dipoles/dft_traj.xyz')
     with open(input_file, mode='r') as f:
         for i in range(total_frames // num_frames):
             frame = [next(f) for j in range(num_lines * num_frames)]
