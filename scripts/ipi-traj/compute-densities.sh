@@ -2,7 +2,7 @@
 
 cd $HOME/dipoles/scripts/ipi-traj
 
-start_frame=19940
+start_frame=0
 n=60000
 
 # run dftb+ static calculation on each frame
@@ -64,7 +64,7 @@ for ((j=0; j < 20; j++)) do
     cd ../
 done" > $job_file
 
-    sbatch $job_file
+    # sbatch $job_file
 done
 
 
