@@ -1,0 +1,445 @@
+Command line:
+"travis -p properties.blist"
+
+
+   ________                                 __
+  /        |                               /  |
+  ########/ ______    ______    __     __  ##/    _______
+     ## |  /      \  /      \  /  \   /  | /  |  /       |
+     ## | /######  | ######  | ##  \ /##/  ## | /#######/
+     ## | ## |  ##/  /    ## |  ##  /##/   ## | ##      \
+     ## | ## |      /####### |   ## ##/    ## |  ######  |
+     ## | ## |      ##    ## |    ###/     ## | /     ##/
+     ##/  ##/        #######/      #/      ##/  #######/
+
+     TRajectory Analyzer and VISualizer  -  Open-source freeware under GNU GPL v3
+
+     Copyright (c) Martin Brehm      (2009-2019), University of Halle (Saale)
+                   Martin Thomas     (2012-2019)
+                   Sascha Gehrke     (2016-2019), University of Bonn
+                   Barbara Kirchner  (2009-2019), University of Bonn
+
+     http://www.travis-analyzer.de
+
+     Please cite: M. Brehm, B. Kirchner: J. Chem. Inf. Model. 2011, 51 (8), pp 2007-2023.
+
+     There is absolutely no warranty on any results obtained from TRAVIS.
+
+  #  Running on sh01-ln02.stanford.edu at Tue Jun 30 08:03:24 2020 (PID 40405)
+  #  Running in /home/users/scguo/dipoles/scripts/ipi-traj
+  #  Code version: Jan 01 2019,  Compiled at Apr 30 2020, 08:32:28,  Compiler "4.8.5 20150623 (Red Hat 4.8.5-36)", GCC 4.8.5
+  #  Target platform: Linux,  Compile flags: DEBUG_ARRAYS 
+  #  Machine: int=4b, long=8b, addr=8b, 0xA0B0C0D0=D0,C0,B0,A0.
+  #  Home: /home/users/scguo,  Executable: travis
+  #  Input from terminal,  Output to terminal
+
+ >>> Please use a color scheme with dark background or specify "-nocolor"! <<<
+
+    Loading configuration from /home/users/scguo/.travis.conf ...
+
+[Renaming existing File input.txt to #3#input.txt ...OK.]
+    Opening position trajectory properties.blist ...
+
+    This is an uncompressed BQB trajectory (4v0) and contains the following fields:
+      Labels, Positions, El.Charges, El.Dipoles, El.Quadrupoles
+
+    Trajectory contains 30000 time steps (indexed).
+
+    384 atoms in the system: 256x H, 128x O
+
+    System extent:  X = {    -46 ..  +1586 pm }, dX = 1632 pm
+      (in step 1)   Y = {    -92 ..  +1658 pm }, dY = 1750 pm
+                    Z = {    -35 ..  +1610 pm }, dZ = 1645 pm
+
+    The "advanced mode" offers seldomly required features, including support for non-orthorhombic
+    simulation cells, NPT ensemble, non-periodic systems, user-definded virtual atoms, pseudomolecules, ...
+
+    Use the advanced mode until the analysis selection menu (y/n)? [no] n
+
+    Found cell geometry data in trajectory file:
+
+      X = 1566.00 pm,   Y = 1566.00 pm,   Z = 1566.00 pm
+
+    The overall box density is 0.997072 g/cm^3.
+
+    Assuming a 3D-periodic cell.
+
+    Use these values (y) or enter different values (n)? [yes] y
+    Update cell geometry in every time step (i.e., NPT ensemble) (y) or use fixed cell (n)? [yes] n
+
+    Initialized spatial domain engine with 9 x 9 x 9 cells, min. diameter = 172 pm.
+
+    Molecule recognition [######################################################]
+
+    128 molecules found.
+
+    Sorting atom types...
+    Setting up bond lists...
+    Building atom codes...
+    Creating topological atom order...
+    Creating bond list...
+    Creating angle list...
+    Grouping together equivalent molecules...
+    Found 1 unique molecule types.
+    Sorting molecule types by molecular mass...
+    Found 0 rings.
+    Molecule recognition finished.
+
+Output of bond matrices:
+
+*** Molecule 1: H2O; Representant 1; Distances in pm ***
+
+    H1  H2  O1 
+H1  ***  -   98 
+H2   -  *** 105 
+O1   98 105 *** 
+
+    Atoms H1, H2 are equivalent.
+
+
+*** The following 1 kind of molecules has been recognized:
+    (ordered by molecular mass)
+
+  - Molecule 1: H2O (128 pieces, 18.02 g/mol)
+      (2 noneq. atoms, 1 noneq. bond, 1 noneq. angle)
+
+
+    If you switch on "USE_OPENBABEL" in config.h, TRAVIS can print SMILES strings of your molecules.
+
+    You can create images of the structural formulas with the atom labels for easier
+    identification of the atoms (requires installed GraphViz package - see www.graphviz.org).
+
+    Create images of the structural formulas (y/n)? [no] n
+
+    Accept these molecules (y) or change something (n)? [yes] y
+
+    Uniting molecules which have been broken by wrapping...
+
+    The atoms are currently ordered by topological priority.
+
+    Defining virtual atom #1 as molecular Center of Geometry:
+      - H2O...
+
+    Defining virtual atom #2 as molecular Center of Mass:
+      - H2O...
+
+    Defining molecular dipole vectors:
+
+      The last virtual atom of each molecule is defined as the tip of the dipole vector
+      starting in center of mass (#2). 1 Debye corresponds to 100pm of vector length.
+      Only useful if dipole/charge data is provided. Otherwise vector has always length of zero.
+
+      - Dipole vector #2 --> #3 in H2O ...
+
+>>> 3 virtual atoms have been defined: >>>
+
+    #1 in H2O: Center of Geometry.
+    #2 in H2O: Center of Mass.
+
+    #3 in H2O - tip of molecular dipole vector starting in #2.
+
+<<< End of virtual atoms <<<
+
+
+>>> List of functions <<<
+
+ *** Static (time independent) Functions
+ cdf     - Combined Distribution Function
+ rdf     - Radial Distribution Function
+ adf     - Angular Distribution Function
+ ddf     - Dihedral Distribution Function
+ pldf    - Point-Plane Distance Distribution
+ lidf    - Point-Line Distance Distribution
+ plproj  - Plane Projection Distribution
+ dprof   - Fixed Plane Density Profile
+ fpp     - Fixed Plane Projection
+ dens    - Density Distribution Function
+ sdf     - Spatial Distribution Function
+ psdf    - Pseudo SDF (only 2 ref. atoms)
+ dip     - Dipole Distribution Function
+ cond    - Evaluate Structural Condition
+ sfac    - Compute Structure Factor
+
+ *** Dynamic (time dependent) Functions
+ vdf     - Velocity Distribution Function
+ fdf     - Force Distribution Function
+ msd     - Mean Square Displacement / Diffusion Coefficients
+ acf     - Velocity Autocorrelation Functions
+ rdyn    - Vector Reorientation Dynamics
+ vhcf    - Van Hove Correlation Function
+ aggr    - Aggregation Functions (DACF, DLDF, DDisp)
+ hbond   - Hydrogen Bond Dynamics
+ ionpair - Diffusion Corrected Ion Pair Dynamics
+
+ *** Spectroscopic Functions
+ spec    - New Spectroscopy Module (IR, Raman, VCD, ROA)
+ power   - Calculate Power Spectrum
+ nc      - Normal Coordinate Analysis
+ ir      - (old) Calculate IR Spectrum
+ raman   - (old) Calculate Raman Spectrum
+ vcd     - (old) Calculate VCD Spectrum
+ drst    - Save Dipole Restart File
+ mrst    - Save Magnetic Moment Restart File
+ pol     - Set up Polarizability Calculation
+
+ *** Miscellaneous Functions
+ env     - Save Trajectory of RM Environment / TDO Plot
+ proc    - Save Processed Trajectory
+ cut     - Cut Clusters
+ reg     - Region-specific Analysis
+ chi     - Chirality Analysis
+ eck     - Transform to Eckart Frame
+ swan    - Sort Wannier Centers
+ voro    - Basic Voronoi Analysis
+ doma    - Domain Analysis
+ vori    - Voronoi Integration Functions
+ order   - Order Parameters
+
+   (You may specify multiple analyses at once, but
+    the safe way is to perform only one kind of analysis at a time.)
+
+    Which functions to compute (comma separated)? spec
+
+ spec   - New Spectroscopy Module (IR, Raman, VCD, ROA)
+
+    The advanced mode includes some options which are quite powerful,
+    yet possibly weird or seldomly required.
+
+    Use the advanced mode for the main part (y/n)? [no] n
+
+
+    >>> New Spectroscopy Module >>>
+
+    This module computes vibrational spectra (IR/Raman/VCD/ROA) from trajectories of
+    volumetric electron density data. To use Wannier centers instead, use one of the
+    old spectroscopy modules in the main function menu (enter "ir", "raman", or "vcd").
+
+    There are two different operating modes available:
+
+    (*) One-pass Mode:
+      Read all volumetric data trajectories, solve the current PDE, integrate the properties
+      and compute the desired spectra in one single pass. Easy to use, but takes a long time,
+      because only one single CPU core is utilized for the process.
+
+    (*) Two-pass Mode:
+      Solve the current PDE for small parts of each trajectory individually in the first pass
+      ("gathering run"), allowing to parallelize this process on many CPU cores. In the second
+      pass ("analyzing run"), all data files (.emp) obtained in the first-pass runs are used to
+      yield the desired spectra.
+
+    Use two-pass mode (y/n)? [yes] y
+    Is this a gathering run (y) or the analyzing run (n)? [no] n
+
+    Make sure to adapt the time step length if you processed only every n-th frame while gathering.
+    If you, e.g., processed every 8-th frame from a trajectory with 0.5 fs time step, enter "4.0" below.
+
+    Enter the length of one trajectory time step in fs: [0.5] 1.0
+
+    In which time step to start processing the trajectory? [1] 
+    How many time steps to use (from this position on)? [all] 
+    Use every n-th time step from the trajectory? [1] 
+
+    >>> Spectroscopy Observation 1 >>>
+
+    The following types of spectra can be computed:
+      IR    - Infrared Spectrum
+      Raman - Raman Spectrum
+      VCD   - Vibrational Circular Dichroism Spectrum
+      ROA   - Raman Optical Activity Spectrum
+
+    Spectra to compute for this observation (comma separated): ir
+
+    Observe molecules of type H2O for this spectrum (y/n)? [yes] y
+      Which molecules of type H2O to observe (e.g. 1,5-7)? [all] a
+Error: Invalid character "a" while parsing integer list.
+      Which molecules of type H2O to observe (e.g. 1,5-7)? [all] all
+Error: Invalid character "a" while parsing integer list.
+      Which molecules of type H2O to observe (e.g. 1,5-7)? [all] 
+
+    Enter the resolution (=depth) of the correlation functions (in time steps): [2048] 
+
+    CalcFFTSize(): 2048 = 2^11. All prime factors within 2, 3, 5. Fine.
+
+    Using Hann window function (cos^2).
+
+    CalcFFTSize(): 8192 = 2^13. All prime factors within 2, 3, 5. Fine.
+
+    Inserting 6144 zeros for zero padding.
+    This results in a spectral resolution of 2.04 cm^-1 per data point.
+
+    A time step length of 1.00 fs at stride 1 allows a spectral range up to 16678.21 cm^-1.
+
+    Calculate spectrum up to which wave number (cm^-1)? [5000.00 cm^-1] 
+
+    Correct spectrum for a certain simulation temperature (y/n)? [yes] y
+    Enter the simulation temperature (K): [350.0] 300
+
+    Will compute the following spectra:
+      - IR
+
+    <<< Spectroscopy Observation 1 <<<
+
+    Add another observation (y/n)? [no] n
+
+    Added 1 observations.
+
+
+  > Core Charge Definition >
+
+    Please mind pseudopotentials while entering core charges.
+
+    Enter core charge for atom type H: [1.0] 
+    Enter core charge for atom type O: [6.0] 
+
+  < End Core Charge Definition <
+
+    Trying to open data file "properties.blist"...
+
+      Is a valid BQB file, 30000 frames (with index).
+
+    Checking data fields of trajectory...
+      Contains: Labels, Positions, El.Charges, El.Dipoles, El.Quadrupoles
+
+    Rewinding trajectories...
+
+    Reading first time step from 1 trajectories...
+      properties.blist ...
+
+    Computing dipole moment of first molecule from first time step of each trajectory...
+
+      Trajectory 1: (   3.23287615 |   5.45869051 |   0.80477413 ) Debye.
+
+
+    <<< New Spectroscopy Module <<<
+
+
+    Not wrapping molecules into the box.
+
+    Not removing center of mass movement of the box.
+
+
+    Using 30000 time steps: Every 1st within range 1 - approx. 30000.
+
+########## All information collected ##########
+
+
+    >>> Processing Trajectories - Analyze >>>
+
+    Rewinding trajectories...
+
+Step     1 ................................................. ETA 13m46s
+Step   500 ................................................. ETA 13m32s
+Step  1000 ................................................. ETA 13m56s
+Step  1500 ................................................. ETA 14m00s
+Step  2000 ................................................. ETA 13m56s
+Step  2500 ................................................. ETA 13m57s
+Step  3000 ................................................. ETA 13m37s
+Step  3500 ................................................. ETA 13m39s
+Step  4000 ................................................. ETA 13m18s
+Step  4500 ................................................. ETA 13m10s
+Step  5000 ................................................. ETA 12m46s
+Step  5500 ................................................. ETA 12m32s
+Step  6000 ................................................. ETA 12m17s
+Step  6500 ................................................. ETA 12m02s
+Step  7000 ................................................. ETA 11m45s
+Step  7500 ................................................. ETA 11m30s
+Step  8000 ................................................. ETA 11m12s
+Step  8500 ................................................. ETA 10m51s
+Step  9000 ................................................. ETA 10m34s
+Step  9500 ................................................. ETA 10m18s
+Step 10000 ................................................. ETA  9m59s
+Step 10500 ................................................. ETA  9m40s
+Step 11000 ................................................. ETA  9m26s
+Step 11500 ................................................. ETA  9m09s
+Step 12000 ................................................. ETA  8m53s
+Step 12500 ................................................. ETA  8m39s
+Step 13000 ................................................. ETA  8m23s
+Step 13500 ................................................. ETA  8m08s
+Step 14000 ................................................. ETA  7m51s
+Step 14500 ................................................. ETA  7m36s
+Step 15000 ................................................. ETA  7m21s
+Step 15500 ................................................. ETA  7m07s
+Step 16000 ................................................. ETA  6m52s
+Step 16500 ................................................. ETA  6m37s
+Step 17000 ................................................. ETA  6m22s
+Step 17500 ................................................. ETA  6m08s
+Step 18000 ................................................. ETA  5m53s
+Step 18500 ................................................. ETA  5m37s
+Step 19000 ................................................. ETA  5m22s
+Step 19500 ................................................. ETA  5m06s
+Step 20000 ................................................. ETA  4m50s
+Step 20500 ................................................. ETA  4m36s
+Step 21000 ................................................. ETA  4m22s
+Step 21500 ................................................. ETA  4m07s
+Step 22000 ................................................. ETA  3m51s
+Step 22500 ................................................. ETA  3m36s
+Step 23000 ................................................. ETA  3m21s
+Step 23500 ................................................. ETA  3m05s
+Step 24000 ................................................. ETA  2m49s
+Step 24500 ................................................. ETA  2m34s
+Step 25000 ................................................. ETA  2m19s
+Step 25500 ................................................. ETA  2m03s
+Step 26000 ................................................. ETA  1m48s
+Step 26500 ................................................. ETA  1m32s
+Step 27000 ................................................. ETA  1m17s
+Step 27500 ................................................. ETA  1m01s
+Step 28000 ................................................. ETA 46s
+Step 28500 ................................................. ETA 30s
+Step 29000 ................................................. ETA 15s
+Step 29500 ................................................. ETA  0s
+Step 30000 
+CROAEngine::ReadStep(): Could not read further time step from trajectory 1 (properties.blist).
+
+Reached end of file.
+
+Processed 30000 steps.
+
+
+    <<< Processing Trajectories - Analyze <<<
+
+
+    >>> Finishing Analysis >>>
+
+    Deriving all properties...
+      [############################################################]
+
+    * Finishing Observation 1: ir_H2O
+      Computing ACF...
+        [############################################################]
+      Computing Spectrum...
+      Correcting spectrum for 300.00 K simulation temperature...
+      Writing spectrum to "spectrum_ir_H2O.csv"...
+
+    <<< Finished Analysis <<<
+
+Analysis was running for 0h 15m 27s.
+  (32.362 steps per second)
+
+
+    Note: To show a list of all persons who contributed to TRAVIS,
+          please add "-credits" to your command line arguments, or set the
+          variable "SHOWCREDITS" to "TRUE" in your travis.conf file.
+
+    Source code from other projects used in TRAVIS:
+      - lmfit     from Joachim Wuttke
+      - kiss_fft  from Mark Borgerding
+      - voro++    from Chris Rycroft
+
+    http://www.travis-analyzer.de
+
+    Please cite the following articles:
+
+  * "TRAVIS - A Free Analyzer and Visualizer for Monte Carlo and Molecular Dynamics Trajectories",
+    M. Brehm, B. Kirchner; J. Chem. Inf. Model. 2011, 51 (8), pp 2007-2023.
+
+  * "An Efficient Lossless Compression Algorithm for Trajectories of Atom Positions and Volumetric Data",
+    M. Brehm, M. Thomas; J. Chem. Inf. Model. 2018, 58 (10), pp 2092-2107.
+
+  * "Computing vibrational spectra from ab initio molecular dynamics",
+    M. Thomas, M. Brehm, R. Fligg, P. Voehringer, B. Kirchner; Phys. Chem. Chem. Phys. 2013, 15, pp 6608-6622.
+
+  * "Voronoi dipole moments for the simulation of bulk phase vibrational spectra",
+    M. Thomas, M. Brehm, B. Kirchner; Phys. Chem. Chem. Phys. 2015, 17, pp 3207-3213.
+
+*** The End ***
+
